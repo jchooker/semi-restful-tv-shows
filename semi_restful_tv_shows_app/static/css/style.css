@@ -3,3 +3,9 @@
     margin: 0;
     padding: 0;
 }
+
+#wrapper {
+    width: 980px;
+    margin: 10px auto;
+    background-color: wheat;
+}

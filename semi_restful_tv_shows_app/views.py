@@ -1,8 +1,9 @@
 from django.shortcuts import render
+from .models import *
 
 # Create your views here.
-def index(request):
+def allShows(request):
     context = {
-        
+        'shows':Show.objects.all(),
     }
-    return render(request, 'add.show.html', context)
+    return render(request, "all-shows.html", context)
