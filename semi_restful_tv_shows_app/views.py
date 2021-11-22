@@ -42,6 +42,9 @@ def update_show(request, id):
     return redirect(f'/shows/{id}')
 
 def delete_show(request, id):
-    show_to_delete = Show.objects.get(id=id)
-    show_to_delete.delete()
-    return redirect
+    if request.method == "POST":
+        show_to_delete = Show.objects.get(id=id)
+        show_to_delete.delete()
+        return redirect('/')
+    else:
+        return redirect('/')

@@ -11,8 +11,10 @@
 </head>
 <body>
     <div id="wrapper2">
-        <a href="/" class="link-right">Go Back</a>
-        <div class="middle-section">
+        <div class="link-right">
+            <a href="/">Go Back</a>
+        </div>
+        <div id="middle-section2">
             <h1>Add a New Show</h1>
             <form action="/shows/create" method="POST">
                 {% csrf_token %}
