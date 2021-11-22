@@ -11,7 +11,34 @@
 </head>
 <body>
     <div id="wrapper2">
-        <h1>Add a New Show</h1>
+        <a href="/" class="link-right">Go Back</a>
+        <div class="middle-section">
+            <h1>Add a New Show</h1>
+            <form action="/shows/create" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="show_title">Title</label>
+                    <input type="text" class="form-control" name="show_title">
+                </div>
+                <div class="form-row d-flex">
+                    <div class="form-group flex-fill">
+                        <label for="show_network">Network</label>
+                        <input type="text" class="form-control" name="show_network">
+                    </div>
+                    <div class="form-group flex-fill">
+                        <label for="show_release_date">Release Date</label>
+                        <input type="date" class="form-control" name="show_release_date">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="show_desc">Description</label>
+                    <textarea class="form-control" name="show_desc"></textarea>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>

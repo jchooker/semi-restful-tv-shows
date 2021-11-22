@@ -1,4 +1,7 @@
 from django.db import models
+# from datetime import datetime
+# from django.utils import timezone
+# from time import localtime, strftime
 
 # Create your models here.
 class Show(models.Model):

@@ -11,7 +11,17 @@
 </head>
 <body>
     <div id="wrapper3">
-        <h1>TV Show {{show.id}}</h1>
+        <a href="/" class="link-right">Go Back</a>
+        <div id="middle-section3">
+            <h1>TV Show {{show.id}}</h1>
+            <p>Title: {{show.title}}</p>
+            <p>Network: {{show.network}}</p>
+            <p>Date: {{show.release_date|date:"M d, Y"}}</p>
+            <p>Description: {{show.desc}}</p>
+        </div>
+        <div id="bottom-section3">
+            <p>Updated On: {{show.updated_at}}</p>
+        </div>
     </div>
 </body>
 </html>
