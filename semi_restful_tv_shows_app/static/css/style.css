@@ -7,6 +7,7 @@
 #wrapper {
     width: 980px;
     margin: 10px auto;
+    padding: 20px 20px 20px 20px;
     background-color: wheat;
 }
 
@@ -14,6 +15,28 @@
     width: 950px;
     display: flex;
     justify-content: flex-end;
+}
+
+.button-as-link {
+    background-color: wheat;
+    border: none;
+    padding: 0;
+    color: #0075eb;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.button-as-link:hover {
+    color: #069;
+}
+
+.one-line {
+    display: flex;
+    flex-direction: row;
+}
+
+.one-line a, form {
+    margin: 0 10px 0 10px;
 }
 
 #wrapper2 {

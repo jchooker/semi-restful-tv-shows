@@ -11,9 +11,6 @@
 </head>
 <body>
     <div id="wrapper">
-        <p>
-            
-        </p>
         <h1>All Shows</h1>
         <table class="table">
             <thead class="thead-light">
@@ -32,10 +29,13 @@
                     <td>{{show.title}}</td>
                     <td>{{show.network}}</td>
                     <td>{{show.release_date}}</td>
-                    <td>
+                    <td class="one-line">
                         <a href="/shows/{{show.id}}">Show</a> | 
                         <a href="/shows/{{show.id}}/edit">Edit</a> | 
-                        <a href="/shows/{{show.id}}/destroy">Delete</a> 
+                        <form action="/shows/{{show.id}}/destroy" method="POST">
+                            {% csrf_token %}
+                            <button class="button-as-link">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 {% endfor %}
