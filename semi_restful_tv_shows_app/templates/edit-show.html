@@ -16,6 +16,13 @@
         </div>
         <div id="middle-section4">
             <h1>Edit Show {{show.id}}</h1>
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li class='error-msg'>{{message}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             <form action="/shows/{{show.id}}/update" method="POST">
                 {% csrf_token %}
                 <div class="form-group">

@@ -1,5 +1,7 @@
+from django.db.models.expressions import Value
 from django.shortcuts import redirect, render
 from .models import *
+from django.contrib import messages
 
 # Create your views here.
 def all_shows(request):
@@ -16,12 +18,18 @@ def show_form(request):
 
 def add_info(request):
     if request.method == "POST":
-        new_show=Show.objects.create(title=request.POST['show_title'], 
-        network=request.POST['show_network'],
-        release_date=request.POST['show_release_date'],
-        desc=request.POST['show_desc']
-        )
-        return redirect(f'/shows/{new_show.id}')
+        errors = Show.objects.basic_manager(request.POST)
+        if len(errors) > 0:
+            for key, value in errors.items():
+                messages.error(request, value)
+            return render(request, 'add-show.html')
+        else:
+            new_show=Show.objects.create(title=request.POST['show_title'], 
+            network=request.POST['show_network'],
+            release_date=request.POST['show_release_date'],
+            desc=request.POST['show_desc']  
+            )
+            return redirect(f'/shows/{new_show.id}')
     else:
         return redirect('/')
 

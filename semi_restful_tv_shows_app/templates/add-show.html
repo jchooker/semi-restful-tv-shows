@@ -16,6 +16,13 @@
         </div>
         <div id="middle-section2">
             <h1>Add a New Show</h1>
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li class='error-msg'>{{message}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             <form action="/shows/create" method="POST">
                 {% csrf_token %}
                 <div class="form-group">

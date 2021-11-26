@@ -9,6 +9,7 @@
     margin: 10px auto;
     padding: 20px 20px 20px 20px;
     background-color: wheat;
+    border-radius: 10px;
 }
 
 .link-right {
@@ -48,6 +49,7 @@
     align-items: center;
     flex-direction: column;
     background-color: wheat;
+    border-radius: 10px;
 }
 
 #middle-section2 {
@@ -63,6 +65,10 @@
     margin-top: 20px;
 }
 
+.error-msg {
+    color: red;
+}
+
 #wrapper3 {
     width: 980px;
     min-height: 400px;
@@ -74,6 +80,7 @@
     flex-direction: column;
     align-items: center;
     background-color: wheat;
+    border-radius: 10px;
 }
 
 #wrapper3 a {
@@ -103,6 +110,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    border-radius: 10px;
 }
 
 #middle-section4 {
