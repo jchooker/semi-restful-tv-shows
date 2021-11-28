@@ -46,7 +46,14 @@ def edit_show(request, id):
     return render(request, "edit-show.html", context)
 
 def update_show(request, id):
-    show_to_update = Show.objects.get(id=id)
+    # show_to_update = Show.objects.get(id=id)
+    show_to_update = Show.objects.get(id=request.POST['show_ID'])
+    # title=request.POST['show_title']
+    show_to_update.title = request.POST['show_title']
+    show_to_update.network = request.POST['show_network']
+    show_to_update.release_date = request.POST['show_release_date']
+    show_to_update.desc = request.POST['show_desc']
+    show_to_update.save()
     return redirect(f'/shows/{id}')
 
 def delete_show(request, id):
